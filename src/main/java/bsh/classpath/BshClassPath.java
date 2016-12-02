@@ -655,8 +655,7 @@ public class BshClassPath
 			try 
 			{
 				//String rtjar = System.getProperty("java.home")+"/lib/rt.jar";
-				String rtjar = getRTJarPath();
-				URL url = new File( rtjar ).toURI().toURL();
+				URL url = new URL("file:" + getRTJarPath() );
 				bootClassPath = new BshClassPath( 
 					"Boot Class Path", new URL[] { url } );
 			} catch ( MalformedURLException e ) {
